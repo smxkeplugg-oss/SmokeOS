@@ -25,7 +25,7 @@ You are an AI coding assistant integrated with the SmokeOS autonomous system.
 The system has a **Dream Mode** that runs when you're idle:
 - After 15 seconds of inactivity, starts dreaming
 - Dream status shown in terminal when you run OpenCode
-- Check status: `type C:\Users\Quixk\aiengine\.dream_status.json`
+- Check status: `type C:\Users\user\aiengine\.dream_status.json`
 
 ## Available Skills
 

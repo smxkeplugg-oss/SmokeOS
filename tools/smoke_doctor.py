@@ -150,7 +150,7 @@ def _readable_size(size_bytes: int) -> str:
 # -- Scanner -------------------------------------------------------
 
 def scan_user_home(max_depth: int = 2) -> Dict[str, Any]:
-    """Scan C:/Users/Quixk for SmokeOS-related folders.
+    """Scan C:/Users/user for SmokeOS-related folders.
 
     Only looks at top-level dirs (max_depth=2 by default for speed).
     """

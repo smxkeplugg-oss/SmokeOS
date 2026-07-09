@@ -82,7 +82,7 @@ Extracted from private `smokeos-local` on 2026-07-09.
 
 ## VERIFICATION
 
-- [x] No `C:\Users\Quixk` paths in any included file
+- [x] No `C:\Users\(user)` paths in any included file
 - [x] No API tokens or keys in any included file
 - [x] No trading logic in any included file
 - [x] No .env, .token, or credential files
