@@ -115,9 +115,15 @@ def _row_to_dict(row: sqlite3.Row) -> Dict[str, Any]:
 def _move_to_dead_letter(task: Dict[str, Any], reason: str) -> None:
     """Move a permanently failed task to the dead letter queue."""
     dl_path = _DEAD_LETTER_DIR / f"{task['id']}.json"
+    base_dir = _DEAD_LETTER_DIR.resolve()
+    dl_path_resolved = dl_path.resolve()
+    try:
+        dl_path_resolved.relative_to(base_dir)
+    except ValueError:
+        raise Exception("Invalid file path")
     task["dead_letter_reason"] = reason
     task["dead_letter_at"] = _now()
-    dl_path.write_text(json.dumps(task, indent=2, default=str), encoding="utf-8")
+    dl_path_resolved.write_text(json.dumps(task, indent=2, default=str), encoding="utf-8")
 
 
 def _assign_agent() -> Optional[str]:
